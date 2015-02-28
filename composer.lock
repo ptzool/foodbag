@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cc1e6d7d41cdd3a3988f5b6d32e676e5",
+    "hash": "21f3ebd6053be88ba905316415eaf6de",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
-            "version": "dev-master",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "643976f10e7552b2c8538cf6248080fc3252106d"
+                "reference": "57fb76966bc7bba09276bffad4cddcde9a311582"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/643976f10e7552b2c8538cf6248080fc3252106d",
-                "reference": "643976f10e7552b2c8538cf6248080fc3252106d",
+                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/57fb76966bc7bba09276bffad4cddcde9a311582",
+                "reference": "57fb76966bc7bba09276bffad4cddcde9a311582",
                 "shasum": ""
             },
             "type": "library",
@@ -44,7 +44,7 @@
                 "theme",
                 "web"
             ],
-            "time": "2015-02-28 03:28:50"
+            "time": "2015-02-25 15:13:11"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -3020,9 +3020,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "almasaeed2010/adminlte": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
