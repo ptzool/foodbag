@@ -1,4 +1,17 @@
 {
+  "name": "foodbag",
+  "description": "The simple calorie and excercise tracking database",
+  "version": "0.1.0",
+  "homepage": "http://gocompose.com/foodbag/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dacon/foodbag"
+  },
+  "author": {
+    "name": "David Connor",
+    "email": "foodbag@gocompose.com",
+    "url": "http://gocompose.com/"
+  },
   "devDependencies": {
     "gulp": "^3.8.8",
     "laravel-elixir": "*"
