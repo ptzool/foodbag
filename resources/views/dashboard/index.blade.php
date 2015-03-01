@@ -2,49 +2,39 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">CPU Traffic</span>
-                    <span class="info-box-number">90<small>%</small></span>
-                </div><!-- /.info-box-content -->
-            </div><!-- /.info-box -->
-        </div><!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">Likes</span>
-                    <span class="info-box-number">41,410</span>
-                </div><!-- /.info-box-content -->
-            </div><!-- /.info-box -->
-        </div><!-- /.col -->
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Quick Actions</h3>
 
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
+            {!! Form::open(array('action' => array('WeightsController@store') )) !!}
 
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">Sales</span>
-                    <span class="info-box-number">760</span>
-                </div><!-- /.info-box-content -->
-            </div><!-- /.info-box -->
-        </div><!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-                <div class="info-box-content">
-                    <span class="info-box-text">New Members</span>
-                    <span class="info-box-number">2,000</span>
-                </div><!-- /.info-box-content -->
-            </div><!-- /.info-box -->
-        </div><!-- /.col -->
-    </div>
+            <div class="form-group form-inline">
+                {!! Form::label('date', 'Weight:') !!}
+                {!! Form::text('date', \Carbon\Carbon::now(), array('id' => 'date', 'class' => 'form-control', 'placeholder' => 'Select date...')) !!}
+                {!! Form::text('weight', null, array('class' => 'form-control')) !!}
+                {!! Form::submit('Add Weight', ['class' => 'btn btn-large btn-success']) !!}
+            </div>
 
-DASHBOARD
+            {!! Form::close() !!}
+        </div>
+        <div class="box-body">
 
+
+        </div><!-- /.box-body -->
+    </div><!-- /.box -->
+
+@stop
+
+
+@section('footer-script')
+    <script>
+        $( document ).ready(function() {
+            $('#date').datepicker({
+                format: "yyyy-mm-dd",
+                todayBtn: "linked",
+                autoclose: true,
+                todayHighlight: true
+            });
+        });
+    </script>
 @stop

@@ -37,11 +37,6 @@
         </a>
     </li>
     <li>
-        <a href="{{ Config::get('app.url') }}/weight">
-            <i class="fa fa-th"></i> <span>Weight</span> <small class="label pull-right bg-green">Hot</small>
-        </a>
-    </li>
-    <li>
         <a href="{{ Config::get('app.url') }}">
             <i class="fa fa-th"></i> <span>Weight Chart</span> <small class="label pull-right bg-green">Hot</small>
         </a>
@@ -52,7 +47,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ Config::get('app.url') }}">
+        <a href="{{ Config::get('app.url') }}weight">
             <i class="fa fa-th"></i> <span>Weight History</span> <small class="label pull-right bg-green">Hot</small>
         </a>
     </li>

@@ -136,6 +136,8 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+        'Illuminate\Html\HtmlServiceProvider',
+
 		/*
 		 * Application Service Providers...
 		 */
@@ -147,6 +149,8 @@ return [
 
         'Gocompose\Foodbag\Providers\EatsServiceProvider',
         'Gocompose\Foodbag\Providers\WeightServiceProvider',
+
+        'Barryvdh\Debugbar\ServiceProvider',
 
 	],
 

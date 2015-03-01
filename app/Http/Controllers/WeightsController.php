@@ -4,6 +4,8 @@ use Gocompose\Foodbag\Contracts\Repositories\WeightRepositoryInterface;
 use Gocompose\Foodbag\Http\Requests;
 use Gocompose\Foodbag\Http\Controllers\Controller;
 
+use Gocompose\Foodbag\Models\Weight;
+
 use Illuminate\Http\Request;
 
 class WeightsController extends Controller {
@@ -29,7 +31,8 @@ class WeightsController extends Controller {
 	 */
 	public function index()
 	{
-		$weights = $this->repository->user(1);
+        $user = \Auth::user();
+		$weights = $user->weights()->take(10)->get();
 
         $page = array(
             "title" => "Weight",
@@ -54,9 +57,15 @@ class WeightsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Requests\CreateWeightRequest $request)
 	{
-		//
+
+        $weight = new Weight($request->input());
+
+        $user = \Auth::user();
+        $user->weights()->save($weight);
+
+        return redirect()->back()->withSuccess("Weight added");
 	}
 
 	/**

@@ -18,9 +18,4 @@ class WeightRepositoryEloquent extends AbstractRepositoryEloquent implements Wei
         $this->model = $model;
     }
 
-    public function user($id)
-    {
-        return $this->model->all()->where('user_id', $id);
-    }
-
 }
