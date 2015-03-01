@@ -18,7 +18,7 @@ class CreateActivityTypesTable extends Migration {
 			$table->increments('id');
 
             $table->string("name", 255);
-            $table->string("class", 255);
+            $table->string("class", 255)->nullable();
             $table->float("met_rate");
 
 			$table->timestamps();

@@ -22,7 +22,7 @@ class CreateActivitiesTable extends Migration {
             $table->double("duration");
             $table->double("distance");
             $table->datetime("activity_date");
-            $table->string("notes", 500);
+            $table->string("notes", 500)->nullable();
 
 			$table->timestamps();
 		});

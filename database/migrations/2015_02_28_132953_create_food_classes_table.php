@@ -16,7 +16,7 @@ class CreateFoodClassesTable extends Migration {
 		{
 			$table->increments('id');
 
-            $table->string("name", 150);
+            $table->string("name", 150)->nullable();
 
 			$table->timestamps();
 		});

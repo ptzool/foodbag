@@ -19,7 +19,7 @@ class CreateTrainingPlanItemsTable extends Migration {
             $table->integer("item_seq");
             $table->string("name", 200);
             $table->double("distance");
-            $table->enum("distance_type", array("m", "km", "metre"));
+            $table->enum("distance_type", array("m", "km", "metre"))->nullable();
             $table->integer("distance_repeat");
             $table->time("distance_time_limit");
             $table->string("notes", 1000);

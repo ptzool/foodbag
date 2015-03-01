@@ -21,18 +21,18 @@ class CreateFoodsTable extends Migration {
             $table->double("size");
             $table->double("serving_size");
             $table->double("calories");
-            $table->double("protein");
-            $table->double("carbs");
-            $table->double("carbs_sugar");
-            $table->double("fat");
-            $table->double("fat_sat");
-            $table->double("fibre");
-            $table->double("sodium");
-            $table->double("sodium_assalt");
-            $table->double("calcium");
-            $table->double("cholesterol");
+            $table->double("protein")->nullable();
+            $table->double("carbs")->nullable();
+            $table->double("carbs_sugar")->nullable();
+            $table->double("fat")->nullable();
+            $table->double("fat_sat")->nullable();
+            $table->double("fibre")->nullable();
+            $table->double("sodium")->nullable();
+            $table->double("sodium_assalt")->nullable();
+            $table->double("calcium")->nullable();
+            $table->double("cholesterol")->nullable();
 
-            $table->string("notes", 500);
+            $table->string("notes", 500)->nullable();
 
 			$table->timestamps();
 		});
