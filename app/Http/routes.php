@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'DashboardController@index');
-Route::get('home', 'HomeController@index');
 
 Route::resource('eat', 'EatsController');
 Route::resource('weight', 'WeightsController');
