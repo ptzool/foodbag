@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
-
+Route::get('/', 'DashboardController@index');
 Route::get('home', 'HomeController@index');
 
 Route::resource('eat', 'EatsController');
 Route::resource('weight', 'WeightsController');
-//Route::resource('people', 'PeopleController');
+Route::resource('user', 'UserController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

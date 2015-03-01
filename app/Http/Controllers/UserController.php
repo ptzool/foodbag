@@ -1,28 +1,11 @@
 <?php namespace Gocompose\Foodbag\Http\Controllers;
 
-use Gocompose\Foodbag\Contracts\Repositories\WeightRepositoryInterface;
 use Gocompose\Foodbag\Http\Requests;
 use Gocompose\Foodbag\Http\Controllers\Controller;
 
-use Gocompose\Foodbag\Models\Weight;
-
 use Illuminate\Http\Request;
 
-class WeightsController extends Controller {
-
-    protected $repository;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct(WeightRepositoryInterface $repository)
-    {
-        $this->repository = $repository;
-
-        $this->middleware('auth');
-    }
+class UserController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -31,15 +14,7 @@ class WeightsController extends Controller {
 	 */
 	public function index()
 	{
-        $user = \Auth::user();
-		$weights = $user->weights()->take(10)->get();
-
-        $page = array(
-            "title" => "Weight",
-            "subtitle" => "History of weight measurements"
-        );
-
-        return view("weight.index", ["page" => $page, "weights" => $weights]);
+		//
 	}
 
 	/**
@@ -57,15 +32,9 @@ class WeightsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Requests\CreateWeightRequest $request)
+	public function store()
 	{
-
-        $weight = new Weight($request->input());
-
-        $user = \Auth::user();
-        $user->weights()->save($weight);
-
-        return redirect()->back()->withSuccess("Weight added");
+		//
 	}
 
 	/**

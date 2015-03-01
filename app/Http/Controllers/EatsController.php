@@ -18,6 +18,8 @@ class EatsController extends Controller {
     public function __construct(EatsRepositoryInterface $repository)
     {
         $this->repository = $repository;
+
+        $this->middleware('auth');
     }
 
 	/**

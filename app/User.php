@@ -31,4 +31,23 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+
+    public function weights()
+    {
+        return $this->hasMany('Gocompose\Foodbag\Models\Weight')
+            ->orderBy('date','desc');
+    }
+
+    public function eats()
+    {
+        return $this->hasMany('Gocompose\Foodbag\Models\Eat');
+    }
+
+    public function foods()
+    {
+        return $this->belongsToMany('Gocompose\Foodbag\Models\Food', 'eats', 'user_id', 'food_id')
+            ->withPivot("eaten", "amount", "amount_type", "approved");
+
+    }
+
 }

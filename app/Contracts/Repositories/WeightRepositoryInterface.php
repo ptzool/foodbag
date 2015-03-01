@@ -5,5 +5,4 @@ use Gocompose\Foodbag\Contracts\Repositories\RepositoryInterface;
 interface WeightRepositoryInterface extends RepositoryInterface
 {
 
-    public function user($id);
 }
