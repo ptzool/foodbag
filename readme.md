@@ -4,6 +4,6 @@ TODO: Add description.
 
 ### License
 
-Foodbag is open-sourced software licensed under the [GPL v2 license](LICENSE.md).
+Foodbag is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
 
