@@ -1,26 +1,11 @@
 <?php namespace Gocompose\Foodbag\Http\Controllers;
 
-use Gocompose\Foodbag\Contracts\Repositories\EatsRepositoryInterface;
 use Gocompose\Foodbag\Http\Requests;
 use Gocompose\Foodbag\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class EatsController extends Controller {
-
-    protected $repository;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct(EatsRepositoryInterface $repository)
-    {
-        $this->repository = $repository;
-
-        $this->middleware('auth');
-    }
+class UserController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -30,8 +15,6 @@ class EatsController extends Controller {
 	public function index()
 	{
 		//
-
-        dd($this->repository->all());
 	}
 
 	/**

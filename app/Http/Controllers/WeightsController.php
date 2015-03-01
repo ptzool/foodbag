@@ -18,6 +18,8 @@ class WeightsController extends Controller {
     public function __construct(WeightRepositoryInterface $repository)
     {
         $this->repository = $repository;
+
+        $this->middleware('auth');
     }
 
 	/**

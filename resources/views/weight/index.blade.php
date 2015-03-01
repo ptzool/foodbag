@@ -1,4 +1,4 @@
-@extends('layouts.lte-master')
+@extends('layouts.user.master')
 
 @section('content')
 
@@ -38,5 +38,5 @@
 @stop
 
 @section('footer-script')
-    @include('tables.datatables-default')
+    @include('layouts.tables.datatables-default')
 @stop
