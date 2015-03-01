@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Gocompose\Foodbag\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Gocompose\Foodbag\Http\Requests;
+use Gocompose\Foodbag\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 

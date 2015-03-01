@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Gocompose\Foodbag
+        psr4_prefix: Gocompose\Foodbag
         src_path: app

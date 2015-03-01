@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace Gocompose\Foodbag\Commands;
 
 abstract class Command {
 

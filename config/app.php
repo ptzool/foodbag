@@ -139,11 +139,14 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'App\Providers\AppServiceProvider',
-		'App\Providers\BusServiceProvider',
-		'App\Providers\ConfigServiceProvider',
-		'App\Providers\EventServiceProvider',
-		'App\Providers\RouteServiceProvider',
+		'Gocompose\Foodbag\Providers\AppServiceProvider',
+		'Gocompose\Foodbag\Providers\BusServiceProvider',
+		'Gocompose\Foodbag\Providers\ConfigServiceProvider',
+		'Gocompose\Foodbag\Providers\EventServiceProvider',
+		'Gocompose\Foodbag\Providers\RouteServiceProvider',
+
+        'Gocompose\Foodbag\Providers\EatsServiceProvider',
+        'Gocompose\Foodbag\Providers\WeightServiceProvider',
 
 	],
 
