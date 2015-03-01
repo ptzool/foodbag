@@ -2,7 +2,8 @@
 
 use Gocompose\Foodbag\Contracts\Repositories\RepositoryInterface;
 
-interface ProjectsRepositoryInterface extends RepositoryInterface
+interface WeightRepositoryInterface extends RepositoryInterface
 {
 
+    public function user($id);
 }

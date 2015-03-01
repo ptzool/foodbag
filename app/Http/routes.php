@@ -15,7 +15,8 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::resource('eats', 'EatsController');
+Route::resource('eat', 'EatsController');
+Route::resource('weight', 'WeightsController');
 //Route::resource('people', 'PeopleController');
 
 Route::controllers([
