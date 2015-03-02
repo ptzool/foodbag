@@ -50,7 +50,7 @@ class DashboardController extends Controller {
     {
         $user = \Auth::user();
 
-        $stats = $this->repository->stats($user['id'], 10000);
+        $stats = $this->repository->stats($user['id'], 365*10);
 
         $page = array(
             "title" => "Recent",
