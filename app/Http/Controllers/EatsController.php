@@ -29,9 +29,9 @@ class EatsController extends Controller {
 	 */
 	public function index()
 	{
-		//
-
-        dd($this->repository->all());
+        $user = \Auth::user();
+dd($user->eats);
+        //dd($this->repository->all());
 	}
 
 	/**
