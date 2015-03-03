@@ -105,7 +105,8 @@ class DashboardRepository implements DashboardRepositoryInterface
 
         foreach($eats as $eat)
         {
-            $stats[$eat['date']]['cal_in'] = $eat['eatn_calories'];
+            if(isset($stats[$eat['date']]))
+                $stats[$eat['date']]['cal_in'] = $eat['eatn_calories'];
         }
 
         return $stats;

@@ -1,27 +1,11 @@
 <?php namespace Gocompose\Foodbag\Http\Controllers;
 
-use Gocompose\Foodbag\Contracts\Repositories\EatsRepositoryInterface;
 use Gocompose\Foodbag\Http\Requests;
 use Gocompose\Foodbag\Http\Controllers\Controller;
 
-use Gocompose\Foodbag\Models\Eat;
 use Illuminate\Http\Request;
 
-class EatsController extends Controller {
-
-    protected $repository;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct(EatsRepositoryInterface $repository)
-    {
-        $this->repository = $repository;
-
-        $this->middleware('auth');
-    }
+class RepeatActivityController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -30,9 +14,7 @@ class EatsController extends Controller {
 	 */
 	public function index()
 	{
-        $user = \Auth::user();
-dd($user->eats);
-        //dd($this->repository->all());
+		//
 	}
 
 	/**
@@ -50,21 +32,9 @@ dd($user->eats);
 	 *
 	 * @return Response
 	 */
-	public function store(Requests\CreateEatRequest $request)
+	public function store()
 	{
-
-        $user = \Auth::user();
-
-        $eat = new Eat();
-        $eat['food_id'] = $request->input('food_id');
-        $eat['eaten'] = $request->input('eaten');
-        $eat['amount'] = $request->input('amount');
-        $eat['amount_type'] = $request->input('amount_type');
-
-        $user->eats()->save($eat);
-
-        return redirect()->back()->withSuccess("Eat added");
-
+		//
 	}
 
 	/**
@@ -111,4 +81,9 @@ dd($user->eats);
 		//
 	}
 
+
+    public function applyToLoggedInUser($id)
+    {
+        dd($id);
+    }
 }

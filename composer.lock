@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "21f3ebd6053be88ba905316415eaf6de",
+    "hash": "73157b71e17b9581257765f1d85d6051",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -159,6 +159,45 @@
                 "preload"
             ],
             "time": "2015-01-26 22:06:19"
+        },
+        {
+            "name": "connor9/body-calculator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/connor9/body-calculator.git",
+                "reference": "d02828ed71c3e12ce9a9e8a02d6ce5c3e5c341ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/connor9/body-calculator/zipball/d02828ed71c3e12ce9a9e8a02d6ce5c3e5c341ec",
+                "reference": "d02828ed71c3e12ce9a9e8a02d6ce5c3e5c341ec",
+                "shasum": ""
+            },
+            "require": {
+                "triplepoint/php-units-of-measure": "1.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Foodbag\\Body\\": "src/"
+                }
+            },
+            "license": [
+                "GNU v2"
+            ],
+            "authors": [
+                {
+                    "name": "David Connor",
+                    "email": "dconnor@gmail.com"
+                }
+            ],
+            "description": "Calculates body measurements",
+            "support": {
+                "source": "https://github.com/connor9/body-calculator/tree/master",
+                "issues": "https://github.com/connor9/body-calculator/issues"
+            },
+            "time": "2015-03-03 20:37:41"
         },
         {
             "name": "danielstjules/stringy",
@@ -930,16 +969,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.14.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "bb87460c995d97fe55b39e65f6ffb7f64b0a941e"
+                "reference": "48cb9ae6d9436e156316a59d198cb1ca797f8cd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bb87460c995d97fe55b39e65f6ffb7f64b0a941e",
-                "reference": "bb87460c995d97fe55b39e65f6ffb7f64b0a941e",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/48cb9ae6d9436e156316a59d198cb1ca797f8cd8",
+                "reference": "48cb9ae6d9436e156316a59d198cb1ca797f8cd8",
                 "shasum": ""
             },
             "require": {
@@ -966,13 +1005,13 @@
                 }
             ],
             "description": "A simple API extension for DateTime.",
-            "homepage": "https://github.com/briannesbitt/Carbon",
+            "homepage": "http://carbon.nesbot.com",
             "keywords": [
                 "date",
                 "datetime",
                 "time"
             ],
-            "time": "2015-02-06 05:07:29"
+            "time": "2015-03-03 03:24:43"
         },
         {
             "name": "nikic/php-parser",
@@ -1871,6 +1910,54 @@
                 "dump"
             ],
             "time": "2015-02-02 16:32:08"
+        },
+        {
+            "name": "triplepoint/php-units-of-measure",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/triplepoint/php-units-of-measure.git",
+                "reference": "63ddb6969bfde9a0d0039c95048453dcb6d5e433"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/triplepoint/php-units-of-measure/zipball/63ddb6969bfde9a0d0039c95048453dcb6d5e433",
+                "reference": "63ddb6969bfde9a0d0039c95048453dcb6d5e433",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PhpUnitsOfMeasure": "source/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Hanson",
+                    "email": "jonathan@jonathan-hanson.org",
+                    "homepage": "http://www.jonathan-hanson.org/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP library for converting between standard units of measure.",
+            "homepage": "https://github.com/triplepoint/php-units-of-measure",
+            "keywords": [
+                "conversion",
+                "data",
+                "measurements"
+            ],
+            "time": "2014-02-10 00:05:32"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3020,7 +3107,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "connor9/body-calculator": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

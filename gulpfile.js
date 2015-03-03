@@ -29,7 +29,7 @@ elixir(function(mix) {
             paths.datatables + 'media/js/jquery.dataTables.min.js',
             paths.dtplugins + 'integration/bootstrap/3/dataTables.bootstrap.js',
             paths.bsdate + 'js/bootstrap-datepicker.js',
-            paths.typeahead + 'dist/typeahead.min.js',
+            paths.typeahead + 'dist/typeahead.jquery.min.js',
             paths.typeahead + 'dist/bloodhound.min.js'
 
         ], "public/js/all.js", "./" )
