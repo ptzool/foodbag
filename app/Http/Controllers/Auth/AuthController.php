@@ -34,7 +34,7 @@ class AuthController extends Controller {
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
-
+/*
     public function getRegister()
     {
         return redirect()->action('DashboardController@index');
@@ -44,5 +44,5 @@ class AuthController extends Controller {
     {
         return redirect()->action('DashboardController@index');
     }
-
+*/
 }

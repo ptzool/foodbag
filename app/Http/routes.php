@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'DashboardController@index');
+Route::get('/all', 'DashboardController@all');
 
 Route::resource('eat', 'EatsController');
 Route::resource('weight', 'WeightsController');

@@ -40,7 +40,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function eats()
     {
-        return $this->hasMany('Gocompose\Foodbag\Models\Eat');
+        return $this->hasMany('Gocompose\Foodbag\Models\Eat')
+            ->orderBy('eaten', 'desc')
+            ->take(10);
     }
 
     public function foods()
