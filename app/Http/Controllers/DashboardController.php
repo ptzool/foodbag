@@ -31,7 +31,7 @@ class DashboardController extends Controller {
     {
         $user = \Auth::user();
 
-        $stats = $this->repository->stats($user['id'], 10);
+        $stats = $this->repository->stats($user['id'], array('limit' =>10, 'skipDates' => true));
 
         $page = array(
             "title" => "Recent",
