@@ -6,6 +6,8 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+use Carbon\Carbon;
+
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
 	use Authenticatable, CanResetPassword;
@@ -40,9 +42,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function eats()
     {
-        return $this->hasMany('Gocompose\Foodbag\Models\Eat')
-            ->orderBy('eaten', 'desc')
-            ->take(10);
+        return $this->hasMany('Gocompose\Foodbag\Models\Eat');
+    }
+
+    public function activities()
+    {
+        return $this->hasMany('Gocompose\Foodbag\Models\Activity');
     }
 
     public function foods()
@@ -50,6 +55,20 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->belongsToMany('Gocompose\Foodbag\Models\Food', 'eats', 'user_id', 'food_id')
             ->withPivot("eaten", "amount", "amount_type", "approved");
 
+    }
+
+    public function eatsToday()
+    {
+        return $this->hasMany('Gocompose\Foodbag\Models\Eat')
+            ->where('eaten', '>=', Carbon::today() )
+            ->orderBy('eaten', 'desc');
+    }
+
+    public function activitiesToday()
+    {
+        return $this->hasMany('Gocompose\Foodbag\Models\Activity')
+            ->where('activity_date', '>=', Carbon::today() )
+            ->orderBy('activity_date', 'desc');
     }
 
 }

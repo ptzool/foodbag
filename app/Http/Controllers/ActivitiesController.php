@@ -3,6 +3,7 @@
 use Gocompose\Foodbag\Http\Requests;
 use Gocompose\Foodbag\Http\Controllers\Controller;
 
+use Gocompose\Foodbag\Models\Activity;
 use Illuminate\Http\Request;
 
 class ActivitiesController extends Controller {
@@ -32,9 +33,21 @@ class ActivitiesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Requests\CreateActivityRequest $request)
 	{
-		//
+
+        $user = \Auth::user();
+
+        $activity = new Activity();
+        $activity['activity_type_id'] = $request->input('activity_type_id');
+        $activity['duration'] = $request->input('duration');
+        $activity['distance'] = $request->input('distance');
+        $activity['activity_date'] = $request->input('activity_date');
+        $activity['notes'] = $request->input('notes');
+
+        $user->activities()->save($activity);
+
+        return redirect()->back()->withSuccess("Activity added");
 	}
 
 	/**

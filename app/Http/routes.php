@@ -15,8 +15,14 @@ Route::get('/', 'DashboardController@index');
 Route::get('/all', 'DashboardController@all');
 
 Route::resource('eat', 'EatsController');
+Route::resource('foods', 'FoodsController');
 Route::resource('weight', 'WeightsController');
-Route::resource('user', 'UserController');
+Route::resource('profile', 'UserController');
+
+Route::resource('activities', 'ActivitiesController');
+
+Route::resource('repeat', 'RepeatActivityController');
+Route::post('repeat/{id}/apply/', 'RepeatActivityController@applyToLoggedInUser');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

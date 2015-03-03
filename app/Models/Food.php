@@ -6,4 +6,9 @@ class Food extends Model {
 
 	//
 
+    public function scopeNames($query)
+    {
+        return $query->get(array('id','name'));
+    }
+
 }

@@ -13,8 +13,17 @@ class DashboardRepository implements DashboardRepositoryInterface
     {
     }
 
-    public function stats($userId, $limit = 10)
+    public function stats($userId, Array $options)
     {
+
+        $limit = 10;
+        $skipDates = false;
+
+        if(isset($options['limit']))
+            $limit = $options['limit'];
+        if(isset($options['skipDates']))
+            $skipDates = $options['skipDates'];
+
         /*
         Women: BMR = 655 + ( 9.6 x weight in kilos ) + ( 1.8 x height in cm ) - ( 4.7 x age in years )
         Men: BMR = 66 + ( 13.7 x weight in kilos ) + ( 5 x height in cm ) - ( 6.8 x age in years )
@@ -23,25 +32,27 @@ class DashboardRepository implements DashboardRepositoryInterface
 
         $stats = array();
 
-        $end_date_limit = sprintf("-%d day", $limit);
-        $end_date = date('Y-m-d', strtotime($end_date_limit, time()));
-        $date = date("Y-m-d");
+        if(!$skipDates) {
+            $end_date_limit = sprintf("-%d day", $limit);
+            $end_date = date('Y-m-d', strtotime($end_date_limit, time()));
+            $date = date("Y-m-d");
 
 
-        while (strtotime($date) >= strtotime($end_date)) {
+            while (strtotime($date) >= strtotime($end_date)) {
 
-            $stat = array();
-            $stat["date"] = $date;
-            $stat["weight"] = null;
-            $stat["cal_out"] = null;
-            $stat["cal_in"] = null;
-            $stat["gender"] = null;
-            $stat["bmr_m"] = null;
-            $stat["bmr_f"] = null;
+                $stat = array();
+                $stat["date"] = $date;
+                $stat["weight"] = null;
+                $stat["cal_out"] = null;
+                $stat["cal_in"] = null;
+                $stat["gender"] = null;
+                $stat["bmr_m"] = null;
+                $stat["bmr_f"] = null;
 
-            $stats[$date] = $stat;
+                $stats[$date] = $stat;
 
-            $date = date ("Y-m-d", strtotime("-1 day", strtotime($date)));
+                $date = date("Y-m-d", strtotime("-1 day", strtotime($date)));
+            }
         }
 
         // EXERCISE - WEIGHT
@@ -94,7 +105,8 @@ class DashboardRepository implements DashboardRepositoryInterface
 
         foreach($eats as $eat)
         {
-            $stats[$eat['date']]['cal_in'] = $eat['eatn_calories'];
+            if(isset($stats[$eat['date']]))
+                $stats[$eat['date']]['cal_in'] = $eat['eatn_calories'];
         }
 
         return $stats;
