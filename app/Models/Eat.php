@@ -34,7 +34,7 @@ class Eat extends Model {
         if($size <= 0) {
             return null;
         }
-        
+
         if($this["amount_type"] == "S")
             $out = ( ($this["amount"]/$size)*$value);
         else if($this["amount_type"] == "L")
