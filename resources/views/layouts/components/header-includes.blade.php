@@ -12,6 +12,7 @@
 <link href="{{ Config::get('app.url') }}css/_all-skins.min.css" rel="stylesheet">
 
 <link href="{{ Config::get('app.url') }}css/dataTables.bootstrap.css" rel="stylesheet">
+<link href="{{ Config::get('app.url') }}css/datatables.responsive.css" rel="stylesheet">
 <link href="{{ Config::get('app.url') }}css/datepicker3.css" rel="stylesheet">
 
 <link href="{{ Config::get('app.url') }}css/app.css" rel="stylesheet">
