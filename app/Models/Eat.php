@@ -29,12 +29,18 @@ class Eat extends Model {
     private function getScaledValue($value)
     {
         $out = null;
+
+        $size = $this->food["size"];
+        if($size <= 0) {
+            return null;
+        }
+        
         if($this["amount_type"] == "S")
-            $out = ( ($this["amount"]/$this->food["size"])*$value);
+            $out = ( ($this["amount"]/$size)*$value);
         else if($this["amount_type"] == "L")
-            $out = ( ($this["amount"]/$this->food["size"])*$value);
+            $out = ( ($this["amount"]/$size)*$value);
         else
-            $out = (($this["amount"]*$this->food["serving_size"])/$this->food["size"])*$value;
+            $out = (($this["amount"]*$this->food["serving_size"])/$size)*$value;
 
         return $out;
     }
