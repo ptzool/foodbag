@@ -52,7 +52,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ Config::get('app.url') }}">
+        <a href="{{ Config::get('app.url') }}all">
             <i class="fa fa-th"></i> <span>All History</span> <small class="label pull-right bg-green">Hot</small>
         </a>
     </li>

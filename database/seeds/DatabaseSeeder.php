@@ -27,6 +27,10 @@ class DatabaseSeeder extends Seeder {
 
         $this->call('ActivitiesTableSeeder');
         $this->call('ActivityTypesTableSeeder');
+
+        $this->call('RepeatActivityTableSeeder');
+        $this->call('RepeatActivityGroupsTableSeeder');
+        $this->call('RepeatActivityGroupsLinkTableSeeder');
 	}
 
 }

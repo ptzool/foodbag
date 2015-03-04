@@ -1,13 +1,13 @@
 <?php namespace Gocompose\Foodbag\Http\Controllers;
 
-use Gocompose\Foodbag\Contracts\Repositories\EatsRepositoryInterface;
 use Gocompose\Foodbag\Http\Requests;
 use Gocompose\Foodbag\Http\Controllers\Controller;
 
-use Gocompose\Foodbag\Models\Eat;
+use Gocompose\Foodbag\Contracts\Repositories\FoodsRepositoryInterface;
+
 use Illuminate\Http\Request;
 
-class EatsController extends Controller {
+class FoodsController extends Controller {
 
     protected $repository;
 
@@ -16,7 +16,7 @@ class EatsController extends Controller {
      *
      * @return void
      */
-    public function __construct(EatsRepositoryInterface $repository)
+    public function __construct(FoodsRepositoryInterface $repository)
     {
         $this->repository = $repository;
 
@@ -28,11 +28,18 @@ class EatsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-        $user = \Auth::user();
-dd($user->eats);
-        //dd($this->repository->all());
+        $query = $request->input('q');
+
+        $foods = $this->repository->queryNames($query);
+
+        $results = array();
+        foreach($foods as $food)
+        {
+            $results[] = $food;
+        }
+        return \Response::json($results);
 	}
 
 	/**
@@ -50,21 +57,9 @@ dd($user->eats);
 	 *
 	 * @return Response
 	 */
-	public function store(Requests\CreateEatRequest $request)
+	public function store()
 	{
-
-        $user = \Auth::user();
-
-        $eat = new Eat();
-        $eat['food_id'] = $request->input('food_id');
-        $eat['eaten'] = $request->input('eaten');
-        $eat['amount'] = $request->input('amount');
-        $eat['amount_type'] = $request->input('amount_type');
-
-        $user->eats()->save($eat);
-
-        return redirect()->back()->withSuccess("Eat added");
-
+		//
 	}
 
 	/**

@@ -149,6 +149,9 @@ return [
 
         'Gocompose\Foodbag\Providers\EatsServiceProvider',
         'Gocompose\Foodbag\Providers\WeightServiceProvider',
+        'Gocompose\Foodbag\Providers\DashboardServiceProvider',
+        'Gocompose\Foodbag\Providers\FoodsServiceProvider',
+        'Gocompose\Foodbag\Providers\ActivitiesServiceProvider',
 
         'Barryvdh\Debugbar\ServiceProvider',
 
