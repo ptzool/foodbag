@@ -341,7 +341,7 @@
                 },
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
                 remote: {
-                    url: 'http://foodbag.app/foods/?q=%QUERY',
+                    url: '{{ Config::get('app.url') }}foods/?q=%QUERY',
                     filter: function (foods) {
                         // Map the remote source JSON array to a JavaScript object array
                         return $.map(foods, function (food) {
