@@ -115,6 +115,7 @@ class EatsController extends Controller {
         $user = \Auth::user();
 		$eat = $this->repository->destroy($id);
 
+        return redirect()->back()->withSuccess("Eat deleted");
 	}
 
 }

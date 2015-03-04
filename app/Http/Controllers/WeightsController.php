@@ -29,10 +29,19 @@ class WeightsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
         $user = \Auth::user();
-		$weights = $user->weights()->take(10)->get();
+        
+        $limit = $request->input("limit", 10);
+
+        if($limit <= 10)
+            $limit = 10;
+
+        if($limit >= 10000)
+            $limit = 10000;
+
+        $weights = $user->weights()->take($limit)->get();
 
         $page = array(
             "title" => "Weight",
@@ -109,7 +118,10 @@ class WeightsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
-	}
+        $user = \Auth::user();
+        $eat = $this->repository->destroy($id);
+
+        return redirect()->back()->withSuccess("Weight deleted");
+    }
 
 }
