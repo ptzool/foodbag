@@ -8,6 +8,7 @@ var paths = {
     'bsdate': './vendor/bower_components/bootstrap-datepicker/',
     'datatables': './vendor/bower_components/datatables/',
     'dtplugins': './vendor/bower_components/datatables-plugins/',
+    'dtresponsive': './vendor/bower_components/datatables-responsive/',
     'adminlte': './vendor/almasaeed2010/adminlte/',
     'typeahead': './vendor/bower_components/typeahead.js/',
 }
@@ -21,6 +22,7 @@ elixir(function(mix) {
         .copy(paths.adminlte + 'dist/css/skins/_all-skins.min.css', 'public/css/_all-skins.min.css')
         .copy(paths.dtplugins + 'integration/bootstrap/3/dataTables.bootstrap.css', 'public/css/dataTables.bootstrap.css')
         .copy(paths.bsdate + 'css/datepicker3.css', 'public/css/datepicker3.css')
+        .copy(paths.dtresponsive + 'css/dataTables.responsive.css', 'public/css/datatables.responsive.css')
         .stylesIn("public/css")
         .scripts([
             paths.jquery + "dist/jquery.js",
@@ -28,6 +30,7 @@ elixir(function(mix) {
             paths.adminlte + 'dist/js/app.min.js',
             paths.datatables + 'media/js/jquery.dataTables.min.js',
             paths.dtplugins + 'integration/bootstrap/3/dataTables.bootstrap.js',
+            paths.dtresponsive + 'js/dataTables.responsive.js',
             paths.bsdate + 'js/bootstrap-datepicker.js',
             paths.typeahead + 'dist/typeahead.jquery.min.js',
             paths.typeahead + 'dist/bloodhound.min.js'
