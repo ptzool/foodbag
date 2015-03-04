@@ -32,7 +32,7 @@ class WeightsController extends Controller {
 	public function index(Request $request)
 	{
         $user = \Auth::user();
-        
+
         $limit = $request->input("limit", 10);
 
         if($limit <= 10)

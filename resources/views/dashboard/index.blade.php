@@ -10,7 +10,7 @@
 
             <div class="form-group form-inline">
                 {!! Form::label('date', 'Weight:') !!}
-                {!! Form::text('date', \Carbon\Carbon::now(), array('id' => 'date', 'class' => 'date form-control', 'placeholder' => 'Select date...')) !!}
+                {!! Form::text('date', \Carbon\Carbon::now(), array('id' => 'date', 'class' => 'date form-control', 'size'=>16, 'placeholder' => 'Select date...')) !!}
                 {!! Form::text('weight', null, array('size' => 3, 'class' => 'form-control')) !!}
                 {!! Form::submit('Add', ['class' => 'btn btn-large btn-success']) !!}
             </div>
@@ -21,7 +21,7 @@
 
             {!! Form::open(array('action' => array('ActivitiesController@store'), 'class' => 'form-inline' )) !!}
 
-            Date: {!! Form::text('activity_date', \Carbon\Carbon::now(), array('size' => 3, 'class' => 'date form-control')) !!}
+            Date: {!! Form::text('activity_date', \Carbon\Carbon::now(), array('size' => 16, 'class' => 'date form-control')) !!}
             Duration: {!! Form::text('duration', null, array('size' => 3, 'class' => 'form-control')) !!}
             Distance: {!! Form::text('distance', null, array('size' => 3, 'class' => 'form-control')) !!}
             <button id="timeconvert">R</button>
@@ -89,7 +89,7 @@
 
             {!! Form::open(array('action' => array('EatsController@store'), 'class' => 'form-inline' )) !!}
 
-            {!! Form::text('eaten', \Carbon\Carbon::now(), array('size' => 3, 'class' => 'date form-control')) !!}
+            {!! Form::text('eaten', \Carbon\Carbon::now(), array('size' => 3, 'size'=>16, 'class' => 'date form-control')) !!}
             Amt: {!! Form::text('amount', null, array('size' => 3, 'class' => 'form-control')) !!}
             {!! Form::select('amount_type', array('S'=>'g', 'P'=>'#', 'L'=>'ml'), null, array('size' => 1, 'class' => 'form-control')) !!}
             {!! Form::text('food', null, array('size' => 50, 'id' => 'food', 'class' => 'typeahead form-control')) !!}
@@ -107,44 +107,6 @@
     </div><!-- /.box -->
 
 
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title">Recent Weight</h3>
-
-            <div class="box-body">
-
-                <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Weight (kg)</th>
-                        <th>BMI</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach ($weights as $weight)
-                        <tr>
-                            <td>{{ $weight['date']  }}</td>
-                            <td>{{ $weight['weight'] }}</td>
-                            <td>{{ \Foodbag\Body\Calculator::bmi($weight['weight'], $user['height']) }}</td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>Project Name</th>
-                        <th>Collections</th>
-                    </tr>
-                    </tfoot>
-
-                </table>
-
-
-
-            </div><!-- /.box-body -->
-        </div><!-- /.box -->
-
-    </div>
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -167,13 +129,13 @@
                 <tbody>
                 @foreach ($stats as $stat)
                     <tr>
-                        <td>{{ $stat['date']  }}</td>
-                        <td>{{ $stat['weight'] }}</td>
-                        <td>{{ $stat['bmr_m'] }}</td>
-                        <td>{{ $stat['cal_in'] }}</td>
-                        <td>{{ $stat['cal_out'] }}</td>
-                        <td>{{ ($stat['cal_in'] - $stat['cal_out']) }}</td>
-                        <td>{{ ($stat['cal_in'] - $stat['cal_out'] - $stat['bmr_m']) }}</td>
+                        <td>{{ \Carbon\Carbon::parse($stat['date'])->toFormattedDateString() }}</td>
+                        <td>{{ number_format($stat['weight'],1) }}</td>
+                        <td>{{ number_format($stat['bmr_m'],1) }}</td>
+                        <td>{{ number_format($stat['cal_in'],0) }}</td>
+                        <td>{{ number_format($stat['cal_out'],0) }}</td>
+                        <td>{{ number_format(($stat['cal_in'] - $stat['cal_out']),0) }}</td>
+                        <td>{{ number_format(($stat['cal_in'] - $stat['cal_out'] - $stat['bmr_m']),0) }}</td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -192,6 +154,39 @@
     </div><!-- /.box -->
         </div>
 
+
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Recent Weight</h3>
+
+            <div class="box-body">
+
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Weight (kg)</th>
+                        <th>BMI</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($weights as $weight)
+                        <tr>
+                            <td>{{  \Carbon\Carbon::parse($weight['date'])->toFormattedDateString()  }}</td>
+                            <td>{{ number_format($weight['weight'],1) }}</td>
+                            <td>{{ number_format(\Foodbag\Body\Calculator::bmi($weight['weight'], $user['height']),1) }}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+
+                </table>
+
+
+
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+
+    </div>
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -218,16 +213,16 @@
                     <tbody>
                     @foreach ($eats as $eat)
                         <tr>
-                            <td>{{ $eat['eaten']  }}</td>
+                            <td>{{ \Carbon\Carbon::parse($eat['eaten'])->toFormattedDateString()  }}</td>
                             <td></td>
                             <td>{{ $eat->food['name']  }}</td>
                             <td>{{ $eat['amount']  }} {{ $eat->getUnit()  }}</td>
-                            <td>{{ $eat->getCalories()  }}</td>
-                            <td>{{ $eat->food['fat']  }}</td>
-                            <td>{{ $eat->food['protein']  }}</td>
-                            <td>{{ $eat->food['carbs']  }}</td>
-                            <td>{{ $eat->food['calcium']  }}</td>
-                            <td>{{ $eat->food['salt']  }}</td>
+                            <td>{{ number_format($eat->getCalories(),0)  }}</td>
+                            <td>{{ number_format($eat->food['fat'],1)  }}</td>
+                            <td>{{ number_format($eat->food['protein'],1)  }}</td>
+                            <td>{{ number_format($eat->food['carbs'],1)  }}</td>
+                            <td>{{ number_format($eat->food['calcium'],1)  }}</td>
+                            <td>{{ number_format($eat->food['salt'],1)  }}</td>
                             <td></td>
                         </tr>
                     @endforeach
@@ -259,10 +254,10 @@
                     <tbody>
                     @foreach ($activities as $activity)
                         <tr>
-                            <td>{{ $activity['activity_date']  }}</td>
+                            <td>{{ \Carbon\Carbon::parse($activity['activity_date'])->toFormattedDateString() }}</td>
                             <td>{{ $activity->type['name']  }}</td>
                             <td>{{ $activity['duration']  }}</td>
-                            <td>{{ $activity->getMetRateValue(95)  }}</td>
+                            <td>{{ number_format($activity->getMetRateValue(95),0)  }}</td>
 
                             <td></td>
 
