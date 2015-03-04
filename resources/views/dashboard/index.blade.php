@@ -2,6 +2,11 @@
 
 @section('content')
     <style>
+
+        .tt-dropdown-menu {
+            max-height: 150px;
+            overflow-y: auto;
+        }
         .tt-query {
             -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
             -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -68,7 +73,7 @@
             <button id="timeconvert">R</button>
             {!! Form::select('activity_type_id', array($activity_types), null, array('size' => 1, 'class' => 'form-control')) !!}
 
-            Notes: {!! Form::text('notes', null, array('size' => 10, 'id' => 'food', 'class' => 'form-control')) !!}
+            Notes: {!! Form::text('notes', null, array('size' => 10, 'class' => 'form-control')) !!}
             {!! Form::submit('Add', ['class' => 'btn btn-large btn-success']) !!}
 
             {!! Form::close() !!}
@@ -340,6 +345,8 @@
                     return Bloodhound.tokenizers.whitespace(datum.name);
                 },
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
+                minLength: 3,
+                limit: 25,
                 remote: {
                     url: '{{ Config::get('app.url') }}foods/?q=%QUERY',
                     filter: function (foods) {
@@ -360,6 +367,7 @@
                 displayKey: function(food) {
                     return food.name;
                 },
+
                 source: foods.ttAdapter()
             }).on('typeahead:selected', function(event, data){
                 $('#food_id').val(data.value);
