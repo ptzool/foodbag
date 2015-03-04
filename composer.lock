@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "73157b71e17b9581257765f1d85d6051",
+    "hash": "ae81e9111c6335ae736d6d636c9cace7",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "57fb76966bc7bba09276bffad4cddcde9a311582"
+                "reference": "59e2ba0e170aa9402eb17f7fb5815bc4f6628799"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/57fb76966bc7bba09276bffad4cddcde9a311582",
-                "reference": "57fb76966bc7bba09276bffad4cddcde9a311582",
+                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/59e2ba0e170aa9402eb17f7fb5815bc4f6628799",
+                "reference": "59e2ba0e170aa9402eb17f7fb5815bc4f6628799",
                 "shasum": ""
             },
             "type": "library",
@@ -44,7 +44,7 @@
                 "theme",
                 "web"
             ],
-            "time": "2015-02-25 15:13:11"
+            "time": "2015-03-04 01:40:19"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -166,12 +166,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/connor9/body-calculator.git",
-                "reference": "d02828ed71c3e12ce9a9e8a02d6ce5c3e5c341ec"
+                "reference": "c8cc2993f4e30494bba5ecc76ac5aa9d35e30957"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/connor9/body-calculator/zipball/d02828ed71c3e12ce9a9e8a02d6ce5c3e5c341ec",
-                "reference": "d02828ed71c3e12ce9a9e8a02d6ce5c3e5c341ec",
+                "url": "https://api.github.com/repos/connor9/body-calculator/zipball/c8cc2993f4e30494bba5ecc76ac5aa9d35e30957",
+                "reference": "c8cc2993f4e30494bba5ecc76ac5aa9d35e30957",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +197,7 @@
                 "source": "https://github.com/connor9/body-calculator/tree/master",
                 "issues": "https://github.com/connor9/body-calculator/issues"
             },
-            "time": "2015-03-03 20:37:41"
+            "time": "2015-03-04 00:09:51"
         },
         {
             "name": "danielstjules/stringy",
@@ -969,16 +969,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.15.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "48cb9ae6d9436e156316a59d198cb1ca797f8cd8"
+                "reference": "9b7665041754eaa9bb2622349bc9adbc1cf61cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/48cb9ae6d9436e156316a59d198cb1ca797f8cd8",
-                "reference": "48cb9ae6d9436e156316a59d198cb1ca797f8cd8",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/9b7665041754eaa9bb2622349bc9adbc1cf61cb8",
+                "reference": "9b7665041754eaa9bb2622349bc9adbc1cf61cb8",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1011,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2015-03-03 03:24:43"
+            "time": "2015-03-04 04:50:11"
         },
         {
             "name": "nikic/php-parser",

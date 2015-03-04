@@ -1,52 +1,6 @@
 @extends('layouts.user.master')
 
 @section('content')
-    <style>
-
-        .tt-dropdown-menu {
-            max-height: 150px;
-            overflow-y: auto;
-        }
-        .tt-query {
-            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-        }
-
-        .tt-hint {
-            color: #999
-        }
-
-        .tt-dropdown-menu {
-            width: 422px;
-            margin-top: 4px;
-            padding: 4px 0;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 4px;
-            border-radius: 4px;
-            -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-            -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-            box-shadow: 0 5px 10px rgba(0,0,0,.2);
-        }
-
-        .tt-suggestion {
-            padding: 3px 20px;
-            line-height: 24px;
-        }
-
-        .tt-suggestion.tt-cursor {
-            color: #fff;
-            background-color: #0097cf;
-
-        }
-
-        .tt-suggestion p {
-            margin: 0;
-        }
-    </style>
 
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -241,7 +195,7 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Recent Stats</h3>
+            <h3 class="box-title">Recent Eats</h3>
 
             <div class="box-body">
 
@@ -275,15 +229,12 @@
                             <td>{{ $eat->food['calcium']  }}</td>
                             <td>{{ $eat->food['salt']  }}</td>
                             <td></td>
-
                         </tr>
                     @endforeach
                     </tbody>
 
                 </table>
-
-
-
+                
             </div><!-- /.box-body -->
         </div><!-- /.box -->
     </div>
@@ -329,52 +280,10 @@
 @stop
 
 
+
 @section('footer-script')
-    <script>
-        $( document ).ready(function() {
 
-            $('.date').datepicker({
-                format: "yyyy-mm-dd",
-                todayBtn: "linked",
-                autoclose: true,
-                todayHighlight: true
-            });
+    @include('scripts.dates')
+    @include('scripts.foods-typeahead')
 
-            var foods = new Bloodhound({
-                datumTokenizer: function (datum) {
-                    return Bloodhound.tokenizers.whitespace(datum.name);
-                },
-                queryTokenizer: Bloodhound.tokenizers.whitespace,
-                minLength: 3,
-                limit: 25,
-                remote: {
-                    url: '{{ Config::get('app.url') }}foods/?q=%QUERY',
-                    filter: function (foods) {
-                        // Map the remote source JSON array to a JavaScript object array
-                        return $.map(foods, function (food) {
-                            return {
-                                name: food.name,
-                                value: food.id
-                            };
-                        });
-                    }
-                }
-            });
-
-            foods.initialize();
-
-            $('#food').typeahead(null, {
-                displayKey: function(food) {
-                    return food.name;
-                },
-
-                source: foods.ttAdapter()
-            }).on('typeahead:selected', function(event, data){
-                $('#food_id').val(data.value);
-            });
-
-        });
-
-
-    </script>
 @stop

@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>{{ $page['title'] or "BAS Projects Database" }}</title>
+<title>{{ $page['title'] or "Foodbag" }}</title>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
 <link href="{{ Config::get('app.url') }}css/bootstrap.min.css" rel="stylesheet">

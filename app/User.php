@@ -64,6 +64,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             ->orderBy('eaten', 'desc');
     }
 
+    public function eatsWeek()
+    {
+        return $this->hasMany('Gocompose\Foodbag\Models\Eat')
+            ->where('eaten', '>=', Carbon::today() )
+            ->orderBy('eaten', 'desc');
+    }
+
     public function activitiesToday()
     {
         return $this->hasMany('Gocompose\Foodbag\Models\Activity')

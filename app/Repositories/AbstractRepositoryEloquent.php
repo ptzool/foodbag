@@ -28,4 +28,10 @@ abstract class AbstractRepositoryEloquent
         return $this->model->create($input);
     }
 
+    public function destroy($input)
+    {
+        return $this->model->destroy($input);
+    }
+
+
 }

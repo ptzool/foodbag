@@ -31,8 +31,12 @@ class EatsController extends Controller {
 	public function index()
 	{
         $user = \Auth::user();
-dd($user->eats);
-        //dd($this->repository->all());
+
+        $page = array(
+            "title" => "Eats",
+            "subtitle" => "History of what you've eaten"
+        );
+        return view("eats.index", ["page" => $page, "user"=>$user, ]);
 	}
 
 	/**
@@ -108,7 +112,9 @@ dd($user->eats);
 	 */
 	public function destroy($id)
 	{
-		//
+        $user = \Auth::user();
+		$eat = $this->repository->destroy($id);
+
 	}
 
 }
