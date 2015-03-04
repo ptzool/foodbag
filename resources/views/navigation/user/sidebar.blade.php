@@ -17,32 +17,36 @@
         <a href="/">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
+        <li>
+            <a href="{{ Config::get('app.url') }}">
+                <i class="fa fa-th"></i> <span>Quick Entry</span> <small class="label pull-right bg-green">Hot</small>
+            </a>
+        </li>
     </li>
 
     <li class="header">EATS</li>
-
     <li>
-        <a href="{{ Config::get('app.url') }}">
-            <i class="fa fa-th"></i> <span>Quick</span> <small class="label pull-right bg-green">Hot</small>
-        </a>
-    </li>
-    <li>
-        <a href="{{ Config::get('app.url') }}">
+        <a href="{{ Config::get('app.url') }}eats">
             <i class="fa fa-th"></i> <span>Food log</span> <small class="label pull-right bg-green">Hot</small>
         </a>
     </li>
     <li>
-        <a href="{{ Config::get('app.url') }}">
+        <a href="{{ Config::get('app.url') }}activities">
+            <i class="fa fa-th"></i> <span>Activity Log</span> <small class="label pull-right bg-green">Hot</small>
+        </a>
+    </li>
+    <li>
+        <a href="{{ Config::get('app.url') }}foods">
             <i class="fa fa-th"></i> <span>Edit Foods</span> <small class="label pull-right bg-green">Hot</small>
         </a>
     </li>
     <li>
-        <a href="{{ Config::get('app.url') }}">
+        <a href="{{ Config::get('app.url') }}weight/chart">
             <i class="fa fa-th"></i> <span>Weight Chart</span> <small class="label pull-right bg-green">Hot</small>
         </a>
     </li>
     <li>
-        <a href="{{ Config::get('app.url') }}">
+        <a href="{{ Config::get('app.url') }}eats/chart">
             <i class="fa fa-th"></i> <span>Calorie Chart</span> <small class="label pull-right bg-green">Hot</small>
         </a>
     </li>
