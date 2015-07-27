@@ -78,4 +78,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             ->orderBy('activity_date', 'desc');
     }
 
+    public function activitiesRange($start, $limit)
+    {
+        return $this->hasMany('Gocompose\Foodbag\Models\Activity')
+            //->where('activity_date', '>=', Carbon::today())
+            ->orderBy('activity_date', 'desc')
+            ->offset($start)
+            ->limit($limit);
+    }
+
 }
