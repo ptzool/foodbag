@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Food extends Model {
 
-	//
+    protected $fillable = ['food_class_id', 'name'];
 
     public function scopeNames($query)
     {
