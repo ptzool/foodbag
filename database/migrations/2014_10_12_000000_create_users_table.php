@@ -12,26 +12,23 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
-        if(Schema::hasTable('users'))
-        {
+        if(!Schema::hasTable('users')) {
 
-        }
-        /*
-		Schema::create('users', function(Blueprint $table)
-		{
-			$table->increments('id');
+			Schema::create('users', function (Blueprint $table) {
+				$table->increments('id');
 
-            $table->string('name');
-			$table->string('email')->unique();
-			$table->string('password', 60);
+				$table->string('name');
+				$table->string('email')->unique();
+				$table->string('password', 60);
 
-            $table->double('height')->default('70');
-            $table->date('birth')->default('1990-01-01');
-            $table->enum('gender', array('F','M'));
+				$table->double('height')->default('70');
+				$table->date('birth')->default('1990-01-01');
+				$table->enum('gender', array('F', 'M'));
 
-            $table->rememberToken();
-			$table->timestamps();
-		});*/
+				$table->rememberToken();
+				$table->timestamps();
+			});
+		}
 	}
 
 	/**
