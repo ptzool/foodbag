@@ -39,5 +39,12 @@ class FoodsRepositoryEloquent extends AbstractRepositoryEloquent implements Food
         return $results;
     }
 
+    public function update($id, $input) {
+        $food = $this->model->find($id);
+        if($food) {
+            return $food->update($input);
+        }
+        return false;
+    }
 
 }

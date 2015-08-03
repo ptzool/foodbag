@@ -14,14 +14,9 @@
 <ul class="sidebar-menu">
     <li class="header">MAIN NAVIGATION</li>
     <li>
-        <a href="/">
+        <a href="{{ Config::get('app.url') }}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
-        <li>
-            <a href="{{ Config::get('app.url') }}">
-                <i class="fa fa-th"></i> <span>Quick Entry</span> <small class="label pull-right bg-green">Hot</small>
-            </a>
-        </li>
     </li>
 
     <li class="header">EATS</li>
@@ -33,11 +28,6 @@
     <li>
         <a href="{{ Config::get('app.url') }}activities">
             <i class="fa fa-th"></i> <span>Activity Log</span> <small class="label pull-right bg-green">Hot</small>
-        </a>
-    </li>
-    <li>
-        <a href="{{ Config::get('app.url') }}foods">
-            <i class="fa fa-th"></i> <span>Edit Foods</span> <small class="label pull-right bg-green">Hot</small>
         </a>
     </li>
     <li>
@@ -66,7 +56,7 @@
         </a>
     </li>
 
-    <li class="header">TEST</li>
+    <li class="header">FOODS</li>
     <li class="treeview">
         <a href="#">
             <i class="fa fa-pie-chart"></i>
@@ -74,9 +64,8 @@
             <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            <li><a href="{!! URL::action('FoodsController@index') !!}"><i class="fa fa-circle-o"></i> Food List</a></li>
+            <li><a href="{!! URL::action('FoodsController@create') !!}"><i class="fa fa-circle-o"></i> Add Food</a></li>
         </ul>
     </li>
 

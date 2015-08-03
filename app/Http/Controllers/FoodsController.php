@@ -64,7 +64,15 @@ class FoodsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$user = \Auth::user();
+
+		$foods = $this->repository->all();
+
+		$page = array(
+			"title" => "Add food",
+			"subtitle" => "Things you can eat"
+		);
+		return view("foods.create", ["page" => $page, "user"=>$user]);
 	}
 
 	/**
@@ -117,7 +125,17 @@ class FoodsController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+
+		$food = $this->repository->find($id);
+
+		$user = \Auth::user();
+
+		$page = array(
+			"title" => "Food List",
+			"subtitle" => "Things you can eat"
+		);
+
+		return view("foods.edit", ["page" => $page, "user"=>$user, "food" => $food]);
 	}
 
 	/**
@@ -126,9 +144,18 @@ class FoodsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request, $id)
 	{
-		//
+		//$input = array_except(Input::all(), '_method');
+
+
+		$input = array_except($request->input(), array('_method', '_token'));
+
+
+
+		$this->repository->update($id, $input);
+
+		return redirect()->back()->withSuccess("Food updated");
 	}
 
 	/**
