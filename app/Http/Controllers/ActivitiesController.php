@@ -1,10 +1,10 @@
-<?php namespace Gocompose\Foodbag\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
-use Gocompose\Foodbag\Contracts\Repositories\ActivitiesRepositoryInterface;
-use Gocompose\Foodbag\Http\Requests;
-use Gocompose\Foodbag\Http\Controllers\Controller;
+use App\Contracts\Repositories\ActivitiesRepositoryInterface;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
-use Gocompose\Foodbag\Models\Activity;
+use App\Models\Activity;
 use Illuminate\Http\Request;
 
 class ActivitiesController extends Controller {

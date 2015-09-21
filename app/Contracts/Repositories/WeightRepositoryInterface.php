@@ -1,6 +1,6 @@
-<?php namespace Gocompose\Foodbag\Contracts\Repositories;
+<?php namespace App\Contracts\Repositories;
 
-use Gocompose\Foodbag\Contracts\Repositories\RepositoryInterface;
+use App\Contracts\Repositories\RepositoryInterface;
 
 interface WeightRepositoryInterface extends RepositoryInterface
 {

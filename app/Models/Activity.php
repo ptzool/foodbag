@@ -1,4 +1,4 @@
-<?php namespace Gocompose\Foodbag\Models;
+<?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -6,7 +6,7 @@ class Activity extends Model {
 
     public function type()
     {
-        return $this->hasOne('Gocompose\Foodbag\Models\ActivityType', 'id', 'activity_type_id');
+        return $this->hasOne('App\Models\ActivityType', 'id', 'activity_type_id');
     }
 
     public function getMetRateValue($weight)

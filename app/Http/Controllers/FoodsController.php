@@ -1,10 +1,10 @@
-<?php namespace Gocompose\Foodbag\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
-use Gocompose\Foodbag\Http\Requests;
-use Gocompose\Foodbag\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
-use Gocompose\Foodbag\Contracts\Repositories\FoodsRepositoryInterface;
-use Gocompose\Foodbag\Models\Food;
+use App\Contracts\Repositories\FoodsRepositoryInterface;
+use App\Models\Food;
 
 use Illuminate\Http\Request;
 

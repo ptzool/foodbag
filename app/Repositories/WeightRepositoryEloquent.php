@@ -1,9 +1,9 @@
-<?php namespace Gocompose\Foodbag\Repositories;
+<?php namespace App\Repositories;
 
-use Gocompose\Foodbag\Contracts\Repositories\WeightRepositoryInterface;
-use Gocompose\Foodbag\Repositories\AbstractRepositoryEloquent;
+use App\Contracts\Repositories\WeightRepositoryInterface;
+use App\Repositories\AbstractRepositoryEloquent;
 
-use Gocompose\Foodbag\Models\Weight;
+use App\Models\Weight;
 
 class WeightRepositoryEloquent extends AbstractRepositoryEloquent implements WeightRepositoryInterface
 {

@@ -1,6 +1,6 @@
-<?php namespace Gocompose\Foodbag\Repositories;
+<?php namespace App\Repositories;
 
-use Gocompose\Foodbag\Contracts\Repositories\DashboardRepositoryInterface;
+use App\Contracts\Repositories\DashboardRepositoryInterface;
 use Illuminate\Support\Facades\DB;
 
 class DashboardRepository implements DashboardRepositoryInterface

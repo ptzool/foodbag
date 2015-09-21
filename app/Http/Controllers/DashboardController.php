@@ -1,13 +1,13 @@
-<?php namespace Gocompose\Foodbag\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
-use Gocompose\Foodbag\Contracts\Repositories\ActivitiesRepositoryInterface;
-use Gocompose\Foodbag\Contracts\Repositories\DashboardRepositoryInterface;
-use Gocompose\Foodbag\Http\Requests;
-use Gocompose\Foodbag\Http\Controllers\Controller;
+use App\Contracts\Repositories\ActivitiesRepositoryInterface;
+use App\Contracts\Repositories\DashboardRepositoryInterface;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
 use Foodbag\Body;
 
-use Gocompose\Foodbag\Models\ActivityType;
+use App\Models\ActivityType;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller {

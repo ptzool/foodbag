@@ -1,4 +1,4 @@
-<?php namespace Gocompose\Foodbag;
+<?php namespace App;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -36,51 +36,51 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function weights()
     {
-        return $this->hasMany('Gocompose\Foodbag\Models\Weight')
+        return $this->hasMany('App\Models\Weight')
             ->orderBy('date','desc');
     }
 
     public function eats()
     {
-        return $this->hasMany('Gocompose\Foodbag\Models\Eat');
+        return $this->hasMany('App\Models\Eat');
     }
 
     public function activities()
     {
-        return $this->hasMany('Gocompose\Foodbag\Models\Activity');
+        return $this->hasMany('App\Models\Activity');
     }
 
     public function foods()
     {
-        return $this->belongsToMany('Gocompose\Foodbag\Models\Food', 'eats', 'user_id', 'food_id')
+        return $this->belongsToMany('App\Models\Food', 'eats', 'user_id', 'food_id')
             ->withPivot("eaten", "amount", "amount_type", "approved");
 
     }
 
     public function eatsToday()
     {
-        return $this->hasMany('Gocompose\Foodbag\Models\Eat')
+        return $this->hasMany('App\Models\Eat')
             ->where('eaten', '>=', Carbon::today() )
             ->orderBy('eaten', 'desc');
     }
 
     public function eatsWeek()
     {
-        return $this->hasMany('Gocompose\Foodbag\Models\Eat')
+        return $this->hasMany('App\Models\Eat')
             ->where('eaten', '>=', Carbon::today() )
             ->orderBy('eaten', 'desc');
     }
 
     public function activitiesToday()
     {
-        return $this->hasMany('Gocompose\Foodbag\Models\Activity')
+        return $this->hasMany('App\Models\Activity')
             ->where('activity_date', '>=', Carbon::today() )
             ->orderBy('activity_date', 'desc');
     }
 
     public function activitiesRange($start, $limit)
     {
-        return $this->hasMany('Gocompose\Foodbag\Models\Activity')
+        return $this->hasMany('App\Models\Activity')
             //->where('activity_date', '>=', Carbon::today())
             ->orderBy('activity_date', 'desc')
             ->offset($start)

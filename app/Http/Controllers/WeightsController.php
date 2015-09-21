@@ -1,10 +1,10 @@
-<?php namespace Gocompose\Foodbag\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
-use Gocompose\Foodbag\Contracts\Repositories\WeightRepositoryInterface;
-use Gocompose\Foodbag\Http\Requests;
-use Gocompose\Foodbag\Http\Controllers\Controller;
+use App\Contracts\Repositories\WeightRepositoryInterface;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
-use Gocompose\Foodbag\Models\Weight;
+use App\Models\Weight;
 
 use Illuminate\Http\Request;
 

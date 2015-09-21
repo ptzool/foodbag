@@ -1,4 +1,4 @@
-<?php namespace Gocompose\Foodbag\Repositories;
+<?php namespace App\Repositories;
 
 
 abstract class AbstractRepositoryEloquent

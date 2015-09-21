@@ -1,8 +1,8 @@
-<?php namespace Gocompose\Foodbag\Repositories;
+<?php namespace App\Repositories;
 
-use Gocompose\Foodbag\Contracts\Repositories\FoodsRepositoryInterface;
-use Gocompose\Foodbag\Models\Food;
-use Gocompose\Foodbag\Repositories\AbstractRepositoryEloquent;
+use App\Contracts\Repositories\FoodsRepositoryInterface;
+use App\Models\Food;
+use App\Repositories\AbstractRepositoryEloquent;
 
 
 class FoodsRepositoryEloquent extends AbstractRepositoryEloquent implements FoodsRepositoryInterface

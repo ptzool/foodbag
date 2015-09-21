@@ -1,4 +1,4 @@
-<?php namespace Gocompose\Foodbag\Providers;
+<?php namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -7,8 +7,8 @@ class FoodsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            'Gocompose\Foodbag\Contracts\Repositories\FoodsRepositoryInterface',
-            'Gocompose\Foodbag\Repositories\FoodsRepositoryEloquent'
+            'App\Contracts\Repositories\FoodsRepositoryInterface',
+            'App\Repositories\FoodsRepositoryEloquent'
         );
     }
 }

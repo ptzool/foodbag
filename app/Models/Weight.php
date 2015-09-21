@@ -1,4 +1,4 @@
-<?php namespace Gocompose\Foodbag\Models;
+<?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

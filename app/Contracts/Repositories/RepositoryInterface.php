@@ -1,4 +1,4 @@
-<?php namespace Gocompose\Foodbag\Contracts\Repositories;
+<?php namespace App\Contracts\Repositories;
 
 /**
  * RepositoryInterface provides the standard functions to be expected of ANY 

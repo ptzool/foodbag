@@ -1,9 +1,9 @@
-<?php namespace Gocompose\Foodbag\Repositories;
+<?php namespace App\Repositories;
 
-use Gocompose\Foodbag\Contracts\Repositories\ActivitiesRepositoryInterface;
-use Gocompose\Foodbag\Models\Activity;
-use Gocompose\Foodbag\Models\ActivityType;
-use Gocompose\Foodbag\Repositories\AbstractRepositoryEloquent;
+use App\Contracts\Repositories\ActivitiesRepositoryInterface;
+use App\Models\Activity;
+use App\Models\ActivityType;
+use App\Repositories\AbstractRepositoryEloquent;
 
 class ActivitiesRepositoryEloquent extends AbstractRepositoryEloquent implements ActivitiesRepositoryInterface
 {

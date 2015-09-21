@@ -1,4 +1,4 @@
-<?php namespace Gocompose\Foodbag\Providers;
+<?php namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

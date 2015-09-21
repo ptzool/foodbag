@@ -1,6 +1,6 @@
-<?php namespace Gocompose\Foodbag\Http\Requests;
+<?php namespace App\Http\Requests;
 
-use Gocompose\Foodbag\Http\Requests\Request;
+use App\Http\Requests\Request;
 
 class CreateFoodRequest extends Request {
 
